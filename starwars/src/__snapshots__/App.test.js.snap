@@ -16,6 +16,37 @@ exports[`<App /> should match snapshot 1`] = `
     React Wars
   </div>
   <div
+    className="ui buttons"
+    style={
+      Object {
+        "padding": "15px 0",
+      }
+    }
+  >
+    <button
+      className="ui icon left labeled button"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="left chevron icon"
+        onClick={[Function]}
+      />
+      Previous
+    </button>
+    <button
+      className="ui icon right labeled button"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="right chevron icon"
+        onClick={[Function]}
+      />
+      Forward
+    </button>
+  </div>
+  <div
     className="ui segment"
     style={
       Object {
@@ -41,6 +72,42 @@ exports[`<App /> should match snapshot 1`] = `
       className="ui image"
       src="/images/wireframe/short-paragraph.png"
     />
+  </div>
+</div>
+`;
+
+exports[`<CharacterList /> should match snapshot 1`] = `
+<div
+  className="ui fluid container"
+>
+  <div
+    className="ui centered cards"
+  >
+    <div
+      className="ui card"
+      onClick={[Function]}
+    >
+      <div
+        className="content"
+      >
+        <div
+          className="header"
+          style={
+            Object {
+              "padding": "15px",
+            }
+          }
+        >
+          Some Name
+        </div>
+        <button
+          className="ui button"
+          onClick={[Function]}
+        >
+          Show More
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
