@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Card, Button } from 'semantic-ui-react';
+import { Card, Button, List } from 'semantic-ui-react';
+
+import Film from './Film'
 
 const Character = (props) => {
   const [infoStatus, setInfoStatus] = useState(false);
@@ -8,19 +10,44 @@ const Character = (props) => {
     event.preventDefault();
     setInfoStatus(!infoStatus);
   }
+  const films = [];
+  if (props.films) {
+    props.character.films.forEach(item => {
+      films.push(props.films.find(element => element.url === item))
+      console.log(item)
+    })
+  }
+  console.log(props.films);
+  console.log(films);
 
   return (
     <Card.Group centered>
-      <Card>
+      <Card style={{width: '450px', fontSize: '20px'}}>
         <Card.Content>
           <Card.Header style={{padding: '15px'}}>{props.character.name}</Card.Header>
           {infoStatus &&
-          (<Card.Description style={{fontSize: '16px', padding: '0 0 15px 0', textAlign: 'left', paddingLeft: '60px'}}>
-            <div>Height: {props.character.height}</div>
-            <div>Mass: {props.character.mass}</div>
-            <div>Hair Color: {props.character['hair_color']}</div>
-            <div>Eye Color: {props.character['eye_color']}</div>
-            <div>Birth year: {props.character['birth_year']}</div>
+          (<Card.Description style={{fontSize: '16px', padding: '0 0 15px 80px', textAlign: 'left'}}>
+            <List>
+              <List.Item>
+                <List.Content>Height: {props.character.height}</List.Content>
+              </List.Item>
+              <List.Item>
+                <List.Content>Mass: {props.character.mass}</List.Content>
+              </List.Item>
+              <List.Item>
+                <List.Content>Hair Color: {props.character['hair_color']}</List.Content>
+              </List.Item>
+              <List.Item>
+                <List.Content>Skin Color: {props.character['skin_color']}</List.Content>
+              </List.Item>
+              <List.Item>
+                <List.Content>Birth year: {props.character['birth_year']}</List.Content>
+              </List.Item>
+            </List>
+            <List>
+              Films:
+              {films.map((item, index) => <Film key={index} film={item} />)}
+            </List>
           </Card.Description>)}
           <Button onClick={(event) => toggleInfo(event)}>{infoStatus ? 'Show Less' : 'Show More'}</Button>
         </Card.Content>  

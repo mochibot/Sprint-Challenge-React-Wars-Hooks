@@ -5,21 +5,24 @@ exports[`<App /> should match snapshot 1`] = `
   className="App"
 >
   <div
-    className="ui header"
+    className="ui header AppHeader"
     style={
       Object {
         "fontSize": "30px",
-        "paddingTop": "10px",
+        "padding": "20px",
       }
     }
   >
     React Wars
   </div>
+  
   <div
     className="ui segment"
     style={
       Object {
+        "margin": "0 auto",
         "padding": "40px",
+        "width": "50%",
       }
     }
   >
@@ -37,10 +40,48 @@ exports[`<App /> should match snapshot 1`] = `
         </div>
       </div>
     </div>
-    <img
-      className="ui image"
-      src="/images/wireframe/short-paragraph.png"
-    />
+  </div>
+</div>
+`;
+
+exports[`<CharacterList /> should match snapshot 1`] = `
+<div
+  className="ui fluid container"
+>
+  <div
+    className="ui centered cards"
+  >
+    <div
+      className="ui card"
+      onClick={[Function]}
+      style={
+        Object {
+          "fontSize": "20px",
+          "width": "50%",
+        }
+      }
+    >
+      <div
+        className="content"
+      >
+        <div
+          className="header"
+          style={
+            Object {
+              "padding": "15px",
+            }
+          }
+        >
+          Some name
+        </div>
+        <button
+          className="ui button"
+          onClick={[Function]}
+        >
+          Show More
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
