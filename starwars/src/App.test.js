@@ -13,11 +13,15 @@ describe('<App />', () => {
 
 const sampleCharList = [
   {
-    name: 'Some Name',
+    name: 'Some name',
     mass: 'some number',
     hair_color: 'some color',
-    eye_color: 'some color',
+    skin_color: 'some color',
     birth_year: 'some number',
+    films: [{
+      url: 'some URL',
+      title: 'some title'
+    }]
   }
 ]
 

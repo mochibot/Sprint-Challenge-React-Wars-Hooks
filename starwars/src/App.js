@@ -15,10 +15,21 @@ const App = () => {
   const [data, setData] = useState('');
   const [charList, setCharList] = useState([]);
   const [page, setPage] = useState(1);
+  const [films, setFilms] = useState([]);
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
-  
+  useEffect(() => {
+    axios.get(`https://swapi.co/api/films/`)
+      .then(response => {
+        console.log('fetch films success: ', response)
+        setFilms(response.data.results);
+      })
+      .catch(error => {
+        console.log('error fetching films: ', error);
+      })
+  }, [])
+
   useEffect(() => {
     axios.get(`https://swapi.co/api/people/?page=${page}`)
       .then(response => {
@@ -59,12 +70,12 @@ const App = () => {
   return (
     <div className="App">
       <Header className='AppHeader' style={{padding: '20px', fontSize: '30px'}}>React Wars</Header>
-      {data && <Pagination style={{margin: '20px 0'}} activePage={page} totalPages={maxPage} ellipsisItem={null} siblingRange={2} onPageChange={pageChangeHandler}/>}
+      {data && <Pagination style={{margin: '20px 0'}} activePage={page} totalPages={maxPage} ellipsisItem={null} onPageChange={pageChangeHandler}/>}
       {/* <Button.Group style={{padding: '15px 0'}}>
         <Button onClick={prevPage} labelPosition='left' icon='left chevron' content='Previous'></Button>
         <Button onClick={nextPage} labelPosition='right' icon='right chevron' content='Forward'></Button>
       </Button.Group> */}
-      {!data ? <Loading/> : <CharacterList characters={charList} />}
+      {!data || !films ? <Loading/> : <CharacterList films={films} characters={charList} />}
     </div>
   );
 }
