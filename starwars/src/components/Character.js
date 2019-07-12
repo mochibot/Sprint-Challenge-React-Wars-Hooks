@@ -22,7 +22,7 @@ const Character = (props) => {
 
   return (
     <Card.Group centered>
-      <Card style={{width: '50%', fontSize: '20px'}}>
+      <Card style={{width: '450px', fontSize: '20px'}}>
         <Card.Content>
           <Card.Header style={{padding: '15px'}}>{props.character.name}</Card.Header>
           {infoStatus &&
