@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should match snapshot 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="ui header"
+    style={
+      Object {
+        "fontSize": "30px",
+        "paddingTop": "10px",
+      }
+    }
+  >
+    React Wars
+  </div>
+  <div
+    className="ui segment"
+    style={
+      Object {
+        "padding": "40px",
+      }
+    }
+  >
+    <div
+      className="ui active transition visible inverted dimmer"
+      onClick={[Function]}
+    >
+      <div
+        className="content"
+      >
+        <div
+          className="ui inverted text loader"
+        >
+          Loading
+        </div>
+      </div>
+    </div>
+    <img
+      className="ui image"
+      src="/images/wireframe/short-paragraph.png"
+    />
+  </div>
+</div>
+`;
